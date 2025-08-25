@@ -34,7 +34,7 @@ node() {
                 python3 -m venv .venv || true
                 . .venv/bin/activate
                 pip install -r requirements.txt
-                pytest -q || true
+                PYTHONPATH=. pytest -q || true
                 """
             }
         }
