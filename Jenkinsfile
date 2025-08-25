@@ -24,7 +24,7 @@ node() {
         def idx = i
         jobs["Worker-${idx}"] = {
             stage("Run Worker-${idx}") {
-                sh "python3 word_counter.py input.txt output_${idx}.txt"
+                runWordCounter(idx)
             }
             stage("Test Worker-${idx}") {
                 sh """
